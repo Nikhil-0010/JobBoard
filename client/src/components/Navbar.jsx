@@ -47,17 +47,16 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Navigation Links - Conditional Rendering */}
         <div className="flex items-center space-x-4">
           {!isLoggedIn ? (
             // Show only Login when not logged in
             <>
-              <a
+              {/* <a
                 href="/jobs"
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
               >
                 Browse Jobs
-              </a>
+              </a> */}
               <a
                 href="/login"
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
@@ -85,30 +84,20 @@ export default function Navbar() {
               )}
 
               {/* Navigation based on user role */}
-              <a
+              {/* <a
                 href="/jobs"
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
               >
                 Browse Jobs
-              </a>
+              </a> */}
 
-              {(userRole === "recruiter" || userRole === "admin") && (
                 <a
-                  href="/recruiter/dashboard"
+                  href="/dashboard"
                   className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
                 >
                   Dashboard
                 </a>
-              )}
 
-              {userRole === "admin" && (
-                <a
-                  href="/admin"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
-                >
-                  Admin
-                </a>
-              )}
 
               {/* Logout button */}
               <button
